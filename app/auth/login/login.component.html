@@ -1,0 +1,23 @@
+
+
+<section  fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="center center">
+  <h1 class="mat-display-3">Admin view</h1>
+  <p class="mat-subheading-1">Login to continue</p>
+  <form style="margin-top:35px;" 
+  fxLayout="column" fxFlex="500ppx" fxLayoutAlign="center center" fxLayoutGap="3vw" #f="ngForm" (ngSubmit)="onSubmit(f)"> 
+    <mat-form-field>
+     <input type="email" matInput ngModel #emailInput="ngModel" required placeholder="email address" name="email"> 
+     <mat-error *ngIf="emailInput.hasError('required')">field cannot be empty</mat-error>
+     
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput ngModel placeholder="password" required name="password"> 
+      <mat-error>field cannot be empty</mat-error>
+     </mat-form-field>
+     <button mat-raised-button type="submit" [disabled]="f.invalid" style=" border-radius:25px;" routerLink="/admin">LOGIN</button>
+
+  </form>
+
+  <a href="">forgot password</a>
+  <a href="">help</a>
+</section>

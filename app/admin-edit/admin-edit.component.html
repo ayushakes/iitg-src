@@ -1,0 +1,110 @@
+<p>
+  admin-edit works!
+</p>
+
+<p>welcome to edit page of {{id}}</p>
+
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <input type="hidden" [(ngModel)]="people.id" name="identity">
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="inputType" class="small">Type</label>
+      <select id="inputType" class="form-control" [(ngModel)]="people.type" name="type">
+        <option selected>Student</option>
+        <option>Faculty</option>
+        <option>Staff</option>
+      </select>
+    </div>
+    <div class="form-group col-12">
+        <label for="inputProgram" class="small">Program</label>
+        <select id="inputProgram" class="form-control" [(ngModel)]="people.program" name="Program">
+          <option selected>Masters</option>
+          <option>Bachelors</option>
+          <option>PhD</option>
+        </select>
+      </div>
+      <div class="form-group col-6">
+          <label for="inputarea" class="small">Year Of Joining</label>
+          <input type="number" class="form-control" id="inputarea" placeholder="Year Of Joining" [(ngModel)]="people.yearOfJoining" name="YearOfJoining">
+      </div>
+      
+  </div>
+  <hr>
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <label for="inputfirst" class="small">First Name</label>
+      <input type="text" class="form-control" id="inputfirst" placeholder="Firstname" [(ngModel)]="people.fName" name="FName">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputmid" class="small">Mid Name</label>
+      <input type="text" class="form-control" id="inputmid" placeholder="Middlename" [(ngModel)]="people.mName" name="MName">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputlast" class="small">Last Name</label>
+      <input type="text" class="form-control" id="inputlast" placeholder="Lastname" [(ngModel)]="people.lName" name="LName">
+    </div>
+  </div>
+
+ 
+  
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4" class="small">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="people.email" name="Email">
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputimageurl" class="small">Image URL</label>
+      <input type="text" class="form-control" id="inputimageurl" placeholder="Image URL" [(ngModel)]="people.imgurl" name="Imgurl">
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputarea" class="small">Interest Areas</label>
+        <input type="text" class="form-control" id="inputarea" placeholder="Interest Areas" [(ngModel)]="people.interest" name="Interest">
+    </div>
+  </div>
+  <hr>
+
+  <div class="d-none">
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" >
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" *ngIf="!f.submitted">Save changes</button>
+  <div *ngIf="f.submitted">wallah! data submitted</div>
+  
+</form>
+<button  class="btn btn-danger" (click)="onDelete()">delete this person</button>
+

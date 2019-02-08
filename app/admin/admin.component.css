@@ -1,0 +1,20 @@
+.admin-container{
+    margin-left:147px;
+    margin-top:110px;
+}
+.slip{ width:200px;
+    height:90px;
+    border-radius:28px;
+    border:2px solid black;
+    padding:40px;
+   
+
+
+}
+a{
+    font-weight:bolder;
+    color:black;
+    text-decoration:none;
+
+}    
+
