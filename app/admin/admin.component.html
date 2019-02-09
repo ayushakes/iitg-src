@@ -70,23 +70,25 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="inputType" class="small">Type</label>
-                    <select id="inputType" class="form-control" [(ngModel)]="people.type" name="type">
+                    <select id="inputType" class="form-control" [(ngModel)]="people.type" name="type" #typeRef='ngModel'>
                       <option selected>Student</option>
                       <option>Faculty</option>
                       <option>Staff</option>
                     </select>
                   </div>
+                  
                   <div class="form-group col-12">
                       <label for="inputProgram" class="small">Program</label>
-                      <select id="inputProgram" class="form-control" [(ngModel)]="people.program" name="Program">
-                        <option selected>Masters</option>
-                        <option>Bachelors</option>
-                        <option>PhD</option>
+                      <select id="inputProgram" class="form-control" [(ngModel)]="people.program" name="Program" >
+                        <option selected value="M.Des ">Masters</option>
+                        <option value="B.Des ">Bachelors</option>
+                        <option value="PhD Students">PhD</option>
                       </select>
                     </div>
                     <div class="form-group col-6">
                         <label for="inputarea" class="small">Year Of Joining</label>
-                        <input type="number" class="form-control" id="inputarea" placeholder="Year Of Joining" [(ngModel)]="people.yearOfJoining" name="YearOfJoining">
+                        <input type="number" class="form-control" id="inputarea" placeholder="Year Of Joining" [(ngModel)]="people.yearOfJoining" name="YearOfJoining"
+                        >
                     </div>
                     
                 </div>
@@ -162,8 +164,9 @@
 
                 </div>
 
-                <button type="submit" class="btn btn-primary" *ngIf="!f.submitted">Save changes</button>
-                <div *ngIf="f.submitted">wallah! data submitted</div>
+                <button type="submit" class="btn btn-primary" >Add</button>
+                <div *ngIf="f.submitted">data submitted! you may close the popup or add another filling the form and clicking add again</div>
+                
               </form>
 
 

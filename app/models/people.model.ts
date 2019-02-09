@@ -8,6 +8,7 @@ export interface People{
     lName:string,
     email:string,
     imgurl:string,
-    interest:string
+    interest:string,
+    batchId?:string
 
 }

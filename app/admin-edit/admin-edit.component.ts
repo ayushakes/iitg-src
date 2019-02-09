@@ -29,6 +29,7 @@ peoples:Observable<People[]>
       email:null,
       imgurl:null,
       interest:null,
+      batchId:null
       }
      
       
@@ -48,6 +49,7 @@ peoples:Observable<People[]>
       email:null,
       imgurl:null,
       interest:null,
+      batchId:null
       }
     
 
@@ -66,6 +68,7 @@ peoples:Observable<People[]>
       email:result.email,
       imgurl:result.imgurl,
       interest:result.interest,
+      batchId:result.program+result.yearOfJoining
 
       }
     });

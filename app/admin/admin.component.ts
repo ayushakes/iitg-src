@@ -28,6 +28,7 @@ peopleSubscription:Subscription;
     email:null,
     imgurl:null,
     interest:null,
+    batchId:null
     }
     
    }
@@ -44,7 +45,8 @@ peopleSubscription:Subscription;
        lName:this.people.lName,
        email:this.people.email,
        imgurl:this.people.imgurl,
-       interest:this.people.interest
+       interest:this.people.interest,
+       batchId:this.people.program+this.people.yearOfJoining
      });
 
        

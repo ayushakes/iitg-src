@@ -22,6 +22,7 @@ constructor(private db:AngularFirestore){
         email:null,
         imgurl:null,
         interest:null,
+        batchId:null,
         }
         this.gotPeople=[];
         
@@ -50,6 +51,7 @@ this.peopleSubscription=this.people$.subscribe(result=>{
     for(let i=0;i<result.length;i++){
         this.gotPeople[i]=result[i];
         this.gotPeople[i].id=result[i].id;
+        this.gotPeople[i].batchId=result[i].program+result[i].yearOfJoining;
 
     }
 

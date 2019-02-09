@@ -47,84 +47,15 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-6 col-md-3 col-lg-2 profile-card " data-toggle="modal" data-target="#exampleModal">
+        <div class="col-6 col-md-3 col-lg-2 profile-card " data-toggle="modal" data-target="#exampleModal" *ngFor="let person of batchPeople">
 
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
+          <img src="{{person.imgurl}}" class="img-fluid" alt="Responsive image" />
+          <p>{{person.fName}} {{person.lName}}</p>
+          <small>{{person.interest}}</small>
+          </div>
 
-        </div>
+      
 
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2 profile-card">
-          <img src="../img/suraj.png" class="img-fluid" alt="Responsive image" />
-          <p>Avinash Sharma</p>
-          <small>UX, Animation</small>
-        </div>
       </div>
 
     </div>
