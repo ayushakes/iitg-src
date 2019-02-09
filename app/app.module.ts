@@ -33,6 +33,7 @@ import { StaffComponent } from './people/staff/staff.component';
 import { CommonModule } from '@angular/common';
 import { CommonService } from './shared/common.service';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -55,6 +56,8 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     AlumniComponent,
     StaffComponent,
     AdminEditComponent,
+    LoadingSpinnerComponent
+    
     
   ],
   imports: [
@@ -69,6 +72,7 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
+  
   providers: [StudentService,CommonService],
   bootstrap: [AppComponent]
 })

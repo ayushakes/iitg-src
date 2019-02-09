@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { StudentService } from './student.service';
 import { BatchModel } from '../../models/batch.model';
 import { Subscription } from 'rxjs';
@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent implements OnInit,OnDestroy {
+export class StudentComponent implements OnInit,OnDestroy,AfterViewInit {
  batches:BatchModel[];
  items: Array<any>;
  subscription:Subscription;
  batchRoute:{name:string,imgurl:string};
-
+loading=true;
   constructor(private studentService:StudentService, private router:Router) { 
 
   }
@@ -38,10 +38,11 @@ export class StudentComponent implements OnInit,OnDestroy {
       }
       console.log(this.batches);
       this.studentService.batches=this.batches;
+      this.loading=false;
     });
 
   }
-  ngOnInit() {
+  ngOnInit() { 
     this.studentStart();
     
     
@@ -52,4 +53,8 @@ export class StudentComponent implements OnInit,OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  ngAfterViewInit(){
+    
+
+  }
 }

@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit,OnDestroy {
 people:People;
 gotPeople:People[]=[];
 peopleSubscription:Subscription;
+loading=true;
 
 
   constructor( private db:AngularFirestore, private commonService:CommonService) {
@@ -33,7 +34,7 @@ peopleSubscription:Subscription;
     
    }
 
-   onSubmit(form:NgForm){
+   onSubmit(form:NgForm){this.loading=true;
     
      this.db.collection('users').add({
        
@@ -49,7 +50,7 @@ peopleSubscription:Subscription;
        batchId:this.people.program+this.people.yearOfJoining
      });
 
-       
+       this.loading=false;
      
 
 
@@ -60,6 +61,7 @@ peopleSubscription:Subscription;
   ngOnInit() {
     this.commonService.getPeople();
     this.gotPeople=this.commonService.gotPeople;
+    this.loading=false;
 
   }
   ngOnDestroy(){
