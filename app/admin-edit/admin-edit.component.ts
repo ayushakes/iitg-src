@@ -29,7 +29,11 @@ peoples:Observable<People[]>
       email:null,
       imgurl:null,
       interest:null,
-      batchId:null
+      batchId:null,
+      designation:null,
+      phone:null,
+      website:null
+
       }
      
       
@@ -49,7 +53,11 @@ peoples:Observable<People[]>
       email:null,
       imgurl:null,
       interest:null,
-      batchId:null
+      batchId:null,
+      designation:null,
+      phone:null,
+      website:null
+
       }
     
 
@@ -59,7 +67,7 @@ peoples:Observable<People[]>
       console.log(this.id);
 
       this.people={
-        type:result.type,
+      type:result.type,
       program:result.program,
       yearOfJoining:result.yearOfJoining,
       fName:result.fName,
@@ -68,7 +76,11 @@ peoples:Observable<People[]>
       email:result.email,
       imgurl:result.imgurl,
       interest:result.interest,
-      batchId:result.program+result.yearOfJoining
+      batchId:result.program+result.yearOfJoining,
+      designation:result.designation,
+    phone:result.phone,
+    website:result.website
+
 
       }
     });

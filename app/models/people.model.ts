@@ -9,6 +9,9 @@ export interface People{
     email:string,
     imgurl:string,
     interest:string,
-    batchId?:string
+    batchId?:string,
+    designation?:string,
+    phone?:number,
+    website?:string
 
 }

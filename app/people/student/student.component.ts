@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent implements OnInit,OnDestroy,AfterViewInit {
+export class StudentComponent implements OnInit,OnDestroy {
  batches:BatchModel[];
  items: Array<any>;
  subscription:Subscription;
@@ -27,7 +27,7 @@ loading=true;
   studentStart(){
     this.batches=[];
    this.subscription= this.studentService.getBatches().subscribe(result=>{
-      console.log(result);
+      
       for(let i=0;i<result.length;i++){
 
         this.batches.push({
@@ -36,7 +36,7 @@ loading=true;
         });
         
       }
-      console.log(this.batches);
+      
       this.studentService.batches=this.batches;
       this.loading=false;
     });
@@ -53,8 +53,4 @@ loading=true;
     this.subscription.unsubscribe();
   }
 
-  ngAfterViewInit(){
-    
-
-  }
 }

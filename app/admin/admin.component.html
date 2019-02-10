@@ -39,9 +39,9 @@
               <input type="text" class="form-control" placeholder="search" aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
-          <div class="col-12 ">
+          <div class="col-12 "style="overflow:scroll;" >
             <ul class="list-group overflow-auto" style="max-height: 30em;">
-              <li *ngFor="let person of gotPeople" class="list-group-item d-flex justify-content-between align-items-center" >
+              <li *ngFor="let person of gotPeople" class="list-group-item d-flex justify-content-between align-items-center"  >
                 {{person.fname}} {{person.mName}} {{person.lName}}
                 <span class="badge badge-primary badge-pill">{{person.type}}</span>
                 <a [routerLink]="['/adminEdit',person.id]" >
@@ -67,7 +67,7 @@
             </div>
             <div class="modal-body">
 
-              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+              <form (ngSubmit)="onSubmitPeople(f)" #f="ngForm">
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="inputType" class="small">Type</label>
@@ -80,7 +80,7 @@
                   
                   <div class="form-group col-12">
                       <label for="inputProgram" class="small">Program</label>
-                      <select id="inputProgram" class="form-control" [(ngModel)]="people.program" name="Program" >
+                      <select id="inputProgram" class="form-control" [(ngModel)]="people.program" name="Program" [disabled]="!(people.type=='Student')">
                         <option selected value="M.Des ">Masters</option>
                         <option value="B.Des ">Bachelors</option>
                         <option value="PhD Students">PhD</option>
@@ -111,11 +111,25 @@
                 </div>
 
                
-                
+                <div class="form-group col-md-12">
+                  <label for="inputDesignation" class="small" >designation</label>
+                  <input type="text" class="form-control" id="inputDesignation" placeholder="Designation" [(ngModel)]="people.designation" name="designate" 
+                  [disabled]="!(people.type=='Faculty')">
+                </div>
+                <div class="form-group col-md-12">
+                  <label for="inputWebsite" class="small">Personal website</label>
+                  <input type="text" class="form-control" id="inputWebsite" placeholder="Personal website" [(ngModel)]="people.website" name="website" 
+                  [disabled]="!(people.type=='Faculty')">
+                </div>
                 <div class="form-row">
                   <div class="form-group col-md-12">
                     <label for="inputEmail4" class="small">Email</label>
                     <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="people.email" name="Email">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="inputPhoneNumber" class="small" >phone number</label>
+                    <input type="number" class="form-control" id="inputPhoneNumber" placeholder="phone number" [(ngModel)]="people.phone" name="phone" 
+                    [disabled]="!(people.type=='Faculty')">
                   </div>
                   <div class="form-group col-md-12">
                     <label for="inputimageurl" class="small">Image URL</label>
@@ -274,92 +288,86 @@
 
 
       <!-- event column -->
+       <!-- event modal -->
+       <div class="modal fade" tabindex="-1" role="dialog" id="event-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Create an event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form (ngSubmit)="onSubmitEvent(event)" #event="ngForm" >
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label for="inputType" class="small">Type</label>
+                    <select id="inputType" class="form-control" [(ngModel)]="myEvent.type" name="type">
+                      <option selected>Notice</option>
+                      <option>Achievement</option>
+                      <option>Annoucement</option>
+                      <option>Event</option>
 
-      <div class="col">
-        <div class="row justify-content-center card">
-          <div class="col-12">
-            <div class="row">
-              <div class="col pt-3">
-                <h3>Events</h3>
-              </div>
-              <div class="col-auto pt-3">
-                <a href="">
-                  <mat-icon>add_circle</mat-icon>
-                </a>
-              </div>
+                    </select>
+                  </div>
+                  <div class="form-group col-12">
+                      <label for="inputdate" class="small">Posted On</label>
+                      <input type="date" class="form-control" id="inputdate" placeholder="" [(ngModel)]="myEvent.postedOn" name="postedOn">
+                    </div>
+
+
+               
+
+                </div>
+                <hr>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label for="inputsdate" class="small">Start Date</label>
+                        <input type="date" class="form-control" id="inputsdate" placeholder="" [(ngModel)]="myEvent.startDate" name="startDate">
+                      </div>
+                      <div class="form-group col-6">
+                          <label for="inputedate" class="small">End Date</label>
+                          <input type="date" class="form-control" id="inputedate" placeholder="" [(ngModel)]="myEvent.endDate" name="endDate">
+                        </div>
+                </div>
+                <hr>
+                <div class="form-row">
+
+                  <div class="form-group col-12">
+                    <label for="inputtitle" class="small">Title</label>
+                    <input type="text" class="form-control" id="inputtitle" placeholder="Title" [(ngModel)]="myEvent.title" name="title">
+                  </div>
+                  <div class="form-group col-12">
+                    <label for="inputDescription" class="small">Description</label>
+                    <input type="text" class="form-control" id="inputDescription" placeholder="Description" [(ngModel)]="myEvent.description" name="desc">
+                  </div>
+                  <div class="form-group col-md-12">
+                      <label for="inputimageurl" class="small">Image URL</label>
+                      <input type="text" class="form-control" id="inputimageurl" placeholder="Image URL" [(ngModel)]="myEvent.imgurl" name="img">
+                    </div>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary" >Add</button>
+                <div *ngIf="event.submitted">data submitted! you may close the popup or add another filling the form and clicking add again</div>
+           
+
+
+              </form>
 
 
             </div>
-
-          </div>
-
-
-          <div class="col-12 text-center pt-1">
-
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
-                  <mat-icon>search</mat-icon>
-                </span>
-              </div>
-              <input type="text" class="form-control" placeholder="search" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             
             </div>
-          </div>
-          <div class="col-12 ">
-            <ul class="list-group overflow-auto" style="max-height: 30em;">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Avinash Sharma
-                <span class="badge badge-primary badge-pill">student</span>
-              </li>
-
-            </ul>
           </div>
         </div>
       </div>
+
 
 
       <!-- groups column -->
@@ -449,6 +457,52 @@
           </div>
         </div>
       </div>
+
+      <div class="col">
+        <div class="row justify-content-center card">
+          <div class="col-12">
+            <div class="row">
+              <div class="col pt-3">
+                <h3>Events</h3>
+              </div>
+              <div class="col-auto pt-3">
+                <a href="" data-toggle="modal" data-target="#event-modal">
+                  <mat-icon >add_circle</mat-icon>
+                </a>
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+          <div class="col-12 text-center pt-1">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <mat-icon >search</mat-icon>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="search" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-12">
+            <ul class="list-group overflow-auto" style="max-height: 30em;">
+              <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let myEvent of gotEvents">
+                {{myEvent.title}}
+                <span class="badge badge-primary badge-pill">{{myEvent.type}}</span>
+                <a [routerLink]="['/adminEdit',myEvent.id]" >
+                  <mat-icon >create</mat-icon>
+                </a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+
 
 
     </div>

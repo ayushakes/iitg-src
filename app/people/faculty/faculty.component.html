@@ -1,3 +1,6 @@
+
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
 <div class="container mt-3 mb-4">
   <div class="row">
 
@@ -37,65 +40,26 @@
               <ul class="list-group list-group-flush">
 
 
-                      <li class="list-group-item">
+                      <li class="list-group-item" *ngFor="let person of gotFaculty">
                           
-                                  <img class="img-profile" src="https://www.iitg.ac.in/design/upload/images/faculties/UK.png"
+                                  <img class="img-profile" src="{{person.imgurl}}"
                                       alt="">
                              
                      
-                                  <h5>D.Uday Kumar</h5>
-                                  <div class="">Associate Professor and Head of the Department</div>
+                                  <h5>{{person.fName}}</h5>
+                                  <div class="">{{person.designation}}</div>
                                   <div class="small mt-1  text-info">Interest Areas</div>
-                                  <div class="small">Visual Communication, Graphic Design, Typography,
-                                      Information Graphics, Architecture, Design Education and Research</div>
+                                  <div class="small">{{person.interest}}</div>
                                   <div class="small mt-1  text-info">Contact</div>
-                                  <div class="small"><span>d.udaya@iitg.ac.in</span>&nbsp<span>+91-9910066488</span></div>
+                                  <div class="small"><span>{{person.email}}</span>&nbsp<span>{{person.phone}}</span></div>
                                   <a href="#">
-                                      <div class="small mt-1  text-info"><b>Personal Webpage</b> </div>
+                                      <div class="small mt-1  text-info"><b>{{person.website}}</b> </div>
                                   </a>
   
                         
                       </li>
   
-                      <li class="list-group-item">
-                          
-                              <img class="img-profile" src="https://www.iitg.ac.in/design/upload/images/faculties/DC.jpg"
-                                  alt="">
-                         
-                 
-                              <h5>D.Uday Kumar</h5>
-                              <div class="">Associate Professor and Head of the Department</div>
-                              <div class="small mt-1  text-info">Interest Areas</div>
-                              <div class="small">Visual Communication, Graphic Design, Typography,
-                                  Information Graphics, Architecture, Design Education and Research</div>
-                              <div class="small mt-1  text-info">Contact</div>
-                              <div class="small"><span>d.udaya@iitg.ac.in</span>&nbsp<span>+91-9910066488</span></div>
-                              <a href="#">
-                                  <div class="small mt-1  text-info"><b>Personal Webpage</b> </div>
-                              </a>
-  
-                    
-                  </li>
-  
-                  <li class="list-group-item">
-                          
-                          <img class="img-profile" src="http://www.iitg.ac.in/design/portfolio/akd/image/akdas.jpg"
-                              alt="">
-                     
-             
-                          <h5>D.Uday Kumar</h5>
-                          <div class="">Associate Professor and Head of the Department</div>
-                          <div class="small mt-1  text-info">Interest Areas</div>
-                          <div class="small">Visual Communication, Graphic Design, Typography,
-                              Information Graphics, Architecture, Design Education and Research</div>
-                          <div class="small mt-1  text-info">Contact</div>
-                          <div class="small"><span>d.udaya@iitg.ac.in</span>&nbsp<span>+91-9910066488</span></div>
-                          <a href="#">
-                              <div class="small mt-1  text-info"><b>Personal Webpage</b> </div>
-                          </a>
-  
-                
-              </li>
+                  
                       
                   </ul>
       </div>

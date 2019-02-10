@@ -93,7 +93,7 @@
 
     .img-car{
         object-fit: cover;
-       height: 540px;
+       
    }
    
 }
@@ -156,14 +156,6 @@ primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.d
 
 
 
-
-
-
-.carousel{
-
-}
-
-
 @media (max-width: 992px) {
     .footer-name {
         padding-left: 1em;
@@ -185,3 +177,27 @@ primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.d
     
     
 }
+
+
+/* section 2 css starts */
+.section-2{
+    padding: 0 0 2em 0;
+}
+
+.carousel-box{
+    height: 415px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.carousel-box img{
+    height: 415px;
+    widows: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    background: #FFFFFFE6;
+}
+
+

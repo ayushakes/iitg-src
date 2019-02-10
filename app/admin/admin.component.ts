@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Subscription } from 'rxjs';
 import { CommonService } from '../shared/common.service';
+import { MyEvent } from '../models/event.model';
 
 @Component({
   selector: 'app-admin',
@@ -15,6 +16,12 @@ people:People;
 gotPeople:People[]=[];
 peopleSubscription:Subscription;
 loading=true;
+
+myEvent:MyEvent;
+gotEvents:MyEvent[]=[];
+eventSubscription:Subscription;
+
+
 
 
   constructor( private db:AngularFirestore, private commonService:CommonService) {
@@ -29,12 +36,28 @@ loading=true;
     email:null,
     imgurl:null,
     interest:null,
-    batchId:null
+    batchId:null,
+    designation:null,
+    phone:null,
+    website:null
+    
     }
+    
+    this.myEvent={
+      id:null,
+    type:null,
+    postedOn:null,
+    startDate:null,
+    endDate:null,
+    title:null,
+    description:null,
+    imgurl:null
+    }
+    
     
    }
 
-   onSubmit(form:NgForm){this.loading=true;
+   onSubmitPeople(form:NgForm){this.loading=true;
     
      this.db.collection('users').add({
        
@@ -47,25 +70,47 @@ loading=true;
        email:this.people.email,
        imgurl:this.people.imgurl,
        interest:this.people.interest,
-       batchId:this.people.program+this.people.yearOfJoining
+       batchId:this.people.program+this.people.yearOfJoining,
+       designation:this.people.designation,
+       phone:this.people.phone,
+       website:this.people.website
      });
 
        this.loading=false;
      
+}
+
+onSubmitEvent(form:NgForm){this.loading=true;
+    
+  this.db.collection('AllEvents').add({
+    
+    type:this.myEvent.type,
+    postedOn:this.myEvent.postedOn,
+    startDate:this.myEvent.startDate,
+    endDate:this.myEvent.endDate,
+    title:this.myEvent.title,
+    description:this.myEvent.description,
+    imgurl:this.myEvent.imgurl
+
+  });
+
+    this.loading=false;
+  
+}
 
 
-     
 
-     
-   }
   ngOnInit() {
     this.commonService.getPeople();
     this.gotPeople=this.commonService.gotPeople;
+    this.commonService.getEvents();
+    this.gotEvents=this.commonService.gotEvents;
     this.loading=false;
 
   }
   ngOnDestroy(){
     this.commonService.unsubscribePeople();
+    this.commonService.unsubscribeEvents();
 
   }
 

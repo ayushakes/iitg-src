@@ -3,6 +3,7 @@ import { People } from "../models/people.model";
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "angularfire2/firestore";
 import { map } from "rxjs/operators";
+import { MyEvent } from "../models/event.model";
 
 @Injectable()
 export class CommonService{
@@ -10,6 +11,14 @@ export class CommonService{
 gotPeople:People[]=[];
 peopleSubscription:Subscription;
 people$: Observable<People[]>;
+myEvent:MyEvent;
+gotEvents:MyEvent[]=[];
+eventSubscription:Subscription;
+myEvent$:Observable<MyEvent[]>;
+
+
+
+
 constructor(private db:AngularFirestore){
     this.people={
         id:null,
@@ -23,14 +32,32 @@ constructor(private db:AngularFirestore){
         imgurl:null,
         interest:null,
         batchId:null,
+        designation:null,
+        phone:null,
+        website:null
+
         }
         this.gotPeople=[];
+
+        this.myEvent={
+            id:null,
+            type:null,
+            postedOn:null,
+            startDate:null,
+            endDate:null,
+            title:null,
+            description:null,
+            imgurl:null
+            }
+            this.gotEvents=[];
         
 }
 
 
 
 getPeople(){
+
+    
     
     this.people$ = this.db.collection('users').snapshotChanges().pipe(map(actions => {
       return actions.map(action => {
@@ -55,11 +82,42 @@ this.peopleSubscription=this.people$.subscribe(result=>{
 
     }
 
-    console.log(this.gotPeople);
+    
 
 })
   }
 
+  getEvents(){
+
+    
+    
+    this.myEvent$ = this.db.collection('AllEvents').snapshotChanges().pipe(map(actions => {
+      return actions.map(action => {
+        const data = action.payload.doc.data() as MyEvent;
+        const id = action.payload.doc.id;
+
+        return { id, ...data };
+
+      });
+    })
+);
+
+
+
+this.eventSubscription=this.myEvent$.subscribe(result=>{
+    
+    console.log(result);
+    for(let i=0;i<result.length;i++){
+        this.gotEvents[i]=result[i];
+        this.gotEvents[i].id=result[i].id;
+      
+
+    }
+
+    
+
+})
+  }
 
 
 
@@ -86,7 +144,17 @@ this.peopleSubscription=this.people$.subscribe(result=>{
     //   }));
 
 unsubscribePeople(){
+    if(this.peopleSubscription){
     this.peopleSubscription.unsubscribe();
+
+    console.log("unsubscribed");}
+}
+
+unsubscribeEvents(){
+    if(this.eventSubscription){
+    this.eventSubscription.unsubscribe();
+
+    console.log(" events unsubscribed");}
 }
 
 }

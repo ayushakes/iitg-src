@@ -2,9 +2,17 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://rsms.me/inter/inter-ui.css');
 
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+/* @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700'); */
 
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/font/manrope-semibold.woff2') format('woff2'),
+         url('./assets/font/manrope-semibold.woff') format('woff'),
+         url('./assets/font/manrope-semibold.ttf') format('truetype');
+         
+  }
 
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter UI var alt', sans-serif; }
@@ -12,24 +20,22 @@
 
 h1,h2,h3{
     
-    font-family: 'Lato', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 900;
-    color: #363636;
+    color: #373b48;
 
 }
 
 h4,h5,h6{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    color: #363636;
+    color:#373b48;
 }
 
 p,a,div,span{
     font-family: 'Inter UI', sans-serif;
-   
-    color: #333;
+    color:#5f6368;
 }
-
 
 
 .green{
@@ -53,6 +59,70 @@ p,a,div,span{
 
 
 /* navbar customization starts here */
+.colorline2{
+    
+    background: rgba(246,129,33,1);
+    background: -moz-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(246,129,33,1)), color-stop(25%, rgba(0,167,97,1)), color-stop(50%, rgba(0,85,153,1)), color-stop(75%, rgba(153,26,151,1)), color-stop(99%, rgba(128,0,21,1)), color-stop(100%, rgba(128,0,21,1)));
+    background: -webkit-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -o-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -ms-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: linear-gradient(to right, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f68121', endColorstr='#800015', GradientType=1 );
+    
+    width: 100%;
+    height: 2px;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+    
+   
+    }
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    
+
+    .colorline{
+        width: 100%;
+    height: 2px;
+        background: linear-gradient(273deg, #f68121, #00a761, #005599, #991a97, #800015);
+        background-size: 1000% 1000%;
+        
+        -webkit-animation: AnimationName 10s ease infinite;
+        -moz-animation: AnimationName 10s ease infinite;
+        animation: AnimationName 10s ease infinite;
+        
+        
+    }
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
 .nav-link{
   
 font-style: normal;
@@ -82,7 +152,7 @@ color: #DADADA;
 
 .navbar-brand{
     margin-right: 0;
-    margin-left: 0.5em;
+    margin-left: 1em;
 }
 
 .full-logo{
@@ -112,10 +182,40 @@ color: #DADADA;
     padding: 0px;
     margin: 0px;
 }
+.navtab .nav-link{
+    color: #5f6368;
+    font-family: 'Manrope',sans-serif;
+    transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
 
-.nav-item .nav-link.active{
-color: #F95F5F;
-font-weight: bold;
+.navtab .nav-link:hover{
+    color: #202124;
+    
+    
+}
+
+.navtab .nav-link.active{
+    color: #F95F5F;
+    
+}
+
+.navtop a{
+font-family: 'Manrope', sans-serif;
+}
+
+.navtop a .nav-link.active{
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    }
+
+.sidenav a{
+    color: #5f6368;
+}
+
+.sidenav .nav-link.active{
+    color: #5f6368;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-toggler {
@@ -239,3 +339,53 @@ padding: 0;
     border-radius: 50%;
 }
 
+/* .navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    -webkit-transition: top 0.6s;
+
+	  -moz-transition: top 0.6s;
+
+      transition: top 0.6s;
+      z-index: 1000;
+}
+
+.navbar.off-canvas { top: -89px; }
+
+.navbar.fixed {
+    top: 0;
+    z-index: 9999;
+  } */
+
+  .option{
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-delay: 0s;
+
+}
+
+  .option-2{
+    animation-duration: 0.1s;
+    animation-delay: 0.3s;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-delay: 0.3s;
+    
+}
+
+.bg-svg{
+    background-image: url(./assets/img/trianglify.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-text-highlight{
+background-color: #2432356e;
+border-radius: 5px;
+}
+
+.shadow-subtle{
+    box-shadow: 0 3px 7px 1px #40494a1f;
+}
