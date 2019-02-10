@@ -1,5 +1,5 @@
  <!-- content starts -->
- <div class="container-fluid main-container option animated fadeInUp" >
+ <div class="container-fluid main-container option animated fadeIn" >
 
   <!-- hero-carousel starts -->
   <div class="container-fluid d-none">
@@ -53,7 +53,7 @@
     </nav>
   </div>
 <br>
-  <div class="container">
+  <div class="container animated fadeIn">
   <div class="jumbotron p-3 p-md-5 text-white bg-svg">
     <div class="col-md-6 col-sm-12 bg-text-highlight p-3">
       <h1 class=" text-white">Celebrating 25 years of the spirit of Design.</h1>
@@ -72,7 +72,7 @@
 
   <!-- section 2 starts -->
 
-  <div class="container section-2">
+  <div class="container section-2 animated fadeIn">
 
     <div class="row">
       <div class="col-lg-8 m-0 p-0">
@@ -91,8 +91,8 @@
                 <div class="carousel-item active">
                   <a href="people.html">
                     <img src="../assets/img/HomePage_Slide7.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption">
-                      <h4>Ranjan Bordoli won Red Dot Award</h4>
+                    <div class="carousel-caption" style="background-color:lightgray; opacity:0.8;"> 
+                      <h4 >Ranjan Bordoli won Red Dot Award</h4>
                       <p class="small">Good News for Us</p>
                     </div>
                   </a>
@@ -101,7 +101,7 @@
                 <div class="carousel-item ">
                   <a href="people.html">
                     <img src="../assets/img/HomePage_Slide1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="background-color:lightgray; opacity:0.8;">
                       <h4>Ranjan Bordoli won Red Dot Award</h4>
                       <p class="small">Good News for Us</p>
                     </div>
@@ -111,7 +111,7 @@
                 <div class="carousel-item ">
                   <a href="people.html">
                     <img src="../assets/img/HomePage_Slide2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="background-color:lightgray; opacity:0.8;" >
                       <h4>Ranjan Bordoli won Red Dot Award</h4>
                       <p class="small">Good News for Us</p>
                     </div>
@@ -142,15 +142,8 @@
           </div>
           <div class="col-12">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Morbi leo risus</li>
-              <li class="list-group-item">Porta ac consectetur ac</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Morbi leo risus</li>
-              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item" *ngFor="let event of gotEvents">{{event.title}}</li>
+              
 
             </ul>
 

@@ -96,3 +96,6 @@ min-height: 250px;
 }
 
 
+.container-fluid,.container{
+    animation-duration: 1s;
+}

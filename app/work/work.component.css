@@ -25,3 +25,7 @@
     border-top-right-radius: 10px;
     min-height: 250px;
     }
+    .container,.container-fluid{
+        animation-duration: 1s;
+
+    }

@@ -389,3 +389,6 @@ border-radius: 5px;
 .shadow-subtle{
     box-shadow: 0 3px 7px 1px #40494a1f;
 }
+.container,.container-fluid{
+    animation-duration: 1s;
+}

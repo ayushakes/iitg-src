@@ -31,5 +31,7 @@ height: 2px;;
 }
 
 
-
+.container-fluid,.container{
+    animation-duration: 1s;
+}
 

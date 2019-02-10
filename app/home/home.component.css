@@ -1,203 +1,394 @@
-.img, #carouselExampleFade{
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://rsms.me/inter/inter-ui.css');
+
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+/* @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700'); */
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../../assets/font/manrope-semibold.woff2') format('woff2'),
+         url('../../assets/font/manrope-semibold.woff') format('woff'),
+         url('../../assets/font/manrope-semibold.ttf') format('truetype');
+         
+  }
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter UI var alt', sans-serif; }
+}
+
+h1,h2,h3{
+    
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    color: #373b48;
+
+}
+
+h4,h5,h6{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color:#373b48;
+}
+
+p,a,div,span{
+    font-family: 'Inter UI', sans-serif;
+    color:#5f6368;
+}
+
+
+.green{
+    color: #114F3A;
+}
+
+.red{
+    color: #F95F5F;
+}
+
+.dark-text{
+    
+    color: #f1f1f1;
+}
+
+.row-dark{
+    background-color: #f0f0f0;
+    background: #333;
+    
+}
+
+
+/* navbar customization starts here */
+.colorline2{
+    
+    background: rgba(246,129,33,1);
+    background: -moz-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(246,129,33,1)), color-stop(25%, rgba(0,167,97,1)), color-stop(50%, rgba(0,85,153,1)), color-stop(75%, rgba(153,26,151,1)), color-stop(99%, rgba(128,0,21,1)), color-stop(100%, rgba(128,0,21,1)));
+    background: -webkit-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -o-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: -ms-linear-gradient(left, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    background: linear-gradient(to right, rgba(246,129,33,1) 0%, rgba(0,167,97,1) 25%, rgba(0,85,153,1) 50%, rgba(153,26,151,1) 75%, rgba(128,0,21,1) 99%, rgba(128,0,21,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f68121', endColorstr='#800015', GradientType=1 );
+    
     width: 100%;
-    object-fit: cover;
-}
-
-
-/*mobile*/
-@media (max-width:22.500em)
-{
-      #carouselExampleFade img{
-        object-fit: cover;
-        height: 360px;
-    }
-
-    .img-car{
-         object-fit: cover;
-        height: 360px;
-    }
+    height: 2px;
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
     
-    
-.highlight img{
-    width: 100%;
-    object-fit: cover;
-    height: 360px;
-}
-}
-
-@media (min-width:22.5em) and (max-width:35em)
-{
-      #carouselExampleFade img{
-        object-fit: cover;
-        height: 420px;
-    }
-    
-    .highlight img{
-        width: 100%;
-        object-fit: cover;
-        height: 420px;
-    }
-
-    .img-car{
-        object-fit: cover;
-       height: 420px;
-   }
    
-}
+    }
 
-/*tablet and mid size screens*/
-@media (min-width:35em) and (max-width:60em)
-{
-      #carouselExampleFade img{
-        object-fit: cover;
-        height: 480px;
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
     }
     
-    .highlight img{
+
+    .colorline{
         width: 100%;
-        object-fit: cover;
-        height: 480px;
-    }
-
-    .img-car{
-        object-fit: cover;
-       height: 480px;
-   }
-   
-}
-
-/*desktop and above */
-@media (min-width:60em)
-{
-    .pad-5{
-    padding: 5%;
-    }   
-
-    .pad-2{
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-bottom: 2%;
-        padding-top:2%;
-    }
-    
-    #carouselExampleFade img{
-        object-fit: cover;
-        height: 540px;
-    }
-    
-    .highlight img{
-        width: 100%;
-        object-fit: cover;
-        height: 540px;
-    }
-
-    .img-car{
-        object-fit: cover;
-       
-   }
-   
-}
-
-.subhead{
-    font-family: Lato;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-font-size: 20px;
-letter-spacing: 0.15px;
-
-color: #4A8F7E;
-}
-
-.highlight{
-    position: relative;
-}
-
-.highlight .intro{
-    position: absolute;
-    
-    top: 40%;
-        left:10%;
-}
-
-
-.highlight-text {
-    background-color: rgba(255,255,255,0.9);
-    padding: 1%;
-}
-
-
-
-.btn-primary {
-    color: #fff;
-    background-color: #31B489;
-    border-color: #31B489;
-}
-
-.btn-primary:hover {
-    color: #fff;
-    background-color:#4A8F7E;
-    border-color: #4A8F7E;
-}
-
-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
-    color: #fff;
-   background-color:#4A8F7E;
-    border-color: #4A8F7E;
-}
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(38,143,255,.5);
-}
-
-#html{
-    background-attachment: fixed;
-}
-
-
-
-
-@media (max-width: 992px) {
-    .footer-name {
-        padding-left: 1em;
-    }
-
-    .footer-address{
-        padding-left: em;
-    }
-}
-
-@media (max-width:540px)
-{
-    .highlight .intro{
+    height: 2px;
+        background: linear-gradient(273deg, #f68121, #00a761, #005599, #991a97, #800015);
+        background-size: 1000% 1000%;
         
-        margin:auto;
-        top: 0;
-            left:0;
+        -webkit-animation: AnimationName 10s ease infinite;
+        -moz-animation: AnimationName 10s ease infinite;
+        animation: AnimationName 10s ease infinite;
+        
+        
     }
-    
-    
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 13%}
+        50%{background-position:100% 88%}
+        100%{background-position:0% 13%}
+    }
+.nav-link{
+  
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+
+color: #DADADA;
 }
 
-
-/* section 2 css starts */
-.section-2{
-    padding: 0 0 2em 0;
+.bg-light {
+    background-color:#fff !important;
 }
 
-.carousel-box{
-    height: 415px;
+.bg-grey{
+    background-color:#f2f2f2;
+}
+.navbar-light{
+    background-color: #fff !important;
+}
+
+@media (min-width:35em){
+    .navbar{
+        line-height: 3em;
+        padding: 0px;
+    }
+}
+
+.navbar-brand{
+    margin-right: 0;
+    margin-left: 1em;
+}
+
+.full-logo{
+    background: #F95F5F;
+   }
+
+.dod{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    padding:0 1rem 0 1rem;
+    font-size: 110%
+}
+
+.navbar-collapse ul{
+    margin-left: 1em;
+}
+
+/* navbar customization ends here */
+
+.footer-cont{
+    padding: 0 0 1.5rem 1rem;
+    margin: 0 0 0 0;
+}
+
+.footer-cont ul{
     padding: 0px;
     margin: 0px;
 }
+.navtab .nav-link{
+    color: #5f6368;
+    font-family: 'Manrope',sans-serif;
+    transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
 
-.carousel-box img{
-    height: 415px;
-    widows: 100%;
+.navtab .nav-link:hover{
+    color: #202124;
+    
+    
+}
+
+.navtab .nav-link.active{
+    color: #F95F5F;
+    
+}
+
+.navtop a{
+font-family: 'Manrope', sans-serif;
+}
+
+.navtop a .nav-link.active{
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    }
+
+.sidenav a{
+    color: #5f6368;
+}
+
+.sidenav .nav-link.active{
+    color: #5f6368;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: transparent;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("../../assets/img/menu.svg");
+    fill: #114F3A;
+}
+
+
+
+/* footer css starts here*/
+
+footer{
+    margin: 0;
+    padding: 0;
+    background: #222;
+    padding-top: 5%;
+}
+
+footer ul{
+   list-style: none;
+}
+
+.footer-links p{
+    
+    color: #e1e1e1;
+}
+
+.footer-links a{
+   
+    color: #e1e1e1;
+}
+
+.footer-foot p,a{
+   
+    color: #888;
+}
+.footer-name{
+    font-family: Inter UI;
+font-style: normal;
+font-weight: 800;
+
+
+
+color: #F95F5F;
+
+}
+
+
+.footer-address{
+    font-family: Inter UI;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+font-size: 12px;
+
+color: #DADADA;
+}
+
+.footer-link-head{
+    font-family: Inter UI;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+font-size: 14px;
+color: #9D9999;
+}
+.footer-link-link{
+    font-family: Inter UI;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 16px;
+    color: #C7C7C7;
+}
+
+/* footer css ends here */
+
+.round-img {
+    border-radius: 1rem !important;
+    object-fit: cover;
+    width: 100%;
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+.container-fluid,.row{
+margin: 0;
+padding: 0;
+}
+
+
+
+.profile-small img{
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.media img{
+    width: 7em;
+    height: 7em;
     object-fit: cover;
 }
 
-.carousel-caption{
-    background: #FFFFFFE6;
+.full-logo{
+    margin-left: .5em;
 }
 
+.img-profile{
+    width: 7em;
+    object-fit: cover;
+    height: 7em;
+    border-radius: 50%;
+}
 
+/* .navbar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    -webkit-transition: top 0.6s;
+
+	  -moz-transition: top 0.6s;
+
+      transition: top 0.6s;
+      z-index: 1000;
+}
+
+.navbar.off-canvas { top: -89px; }
+
+.navbar.fixed {
+    top: 0;
+    z-index: 9999;
+  } */
+
+  .option{
+    animation-duration: 0.1s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-delay: 0s;
+
+}
+
+  .option-2{
+    animation-duration: 0.1s;
+    animation-delay: 0.3s;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-delay: 0.3s;
+    
+}
+
+.bg-svg{
+    background-image: url("../../assets/img/trianglify.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-text-highlight{
+background-color: #2432356e;
+border-radius: 5px;
+}
+
+.shadow-subtle{
+    box-shadow: 0 3px 7px 1px #40494a1f;
+}
+.container-fluid,.container{
+    animation-duration: 1s;
+}

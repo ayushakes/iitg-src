@@ -66,23 +66,47 @@ peoples:Observable<People[]>
       console.log(result);
       console.log(this.id);
 
-      this.people={
-      type:result.type,
-      program:result.program,
-      yearOfJoining:result.yearOfJoining,
-      fName:result.fName,
-      mName:result.mName,
-      lName:result.lName,
-      email:result.email,
-      imgurl:result.imgurl,
-      interest:result.interest,
-      batchId:result.program+result.yearOfJoining,
-      designation:result.designation,
-    phone:result.phone,
-    website:result.website
 
-
+      if(this.people.type=='Student'){
+        this.people={
+          type:result.type,
+          program:"",
+          yearOfJoining:result.yearOfJoining,
+          fName:result.fName,
+          mName:result.mName,
+          lName:result.lName,
+          email:result.email,
+          imgurl:result.imgurl,
+          interest:result.interest,
+          batchId:result.program+result.yearOfJoining,
+          designation:"",
+        phone:0,
+        website:""
+    
+    
+          }
       }
+      
+      else if(this.people.type=='Faculty'){
+        this.people={
+          type:result.type,
+          program:"",
+          yearOfJoining:result.yearOfJoining,
+          fName:result.fName,
+          mName:result.mName,
+          lName:result.lName,
+          email:result.email,
+          imgurl:result.imgurl,
+          interest:result.interest,
+          batchId:"",
+          designation:result.designation,
+        phone:result.phone,
+        website:result.website
+    
+    
+          }
+      }
+      
     });
 
     
@@ -91,6 +115,7 @@ peoples:Observable<People[]>
 
   }
   onSubmit(form:NgForm){
+    console.log(this.people)
     this.db.collection('users').doc<People>(this.id).update(this.people);
 
   }

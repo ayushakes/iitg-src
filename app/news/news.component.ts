@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterContentInit, AfterViewInit } from '@angular/core';
 import { MyEvent } from '../models/event.model';
 import { CommonService } from '../shared/common.service';
 
@@ -7,7 +7,7 @@ import { CommonService } from '../shared/common.service';
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
-export class NewsComponent implements OnInit,OnDestroy {
+export class NewsComponent implements OnInit,OnDestroy,AfterViewInit {
   myEvent:MyEvent;
   gotEvents:MyEvent[]=[];
   constructor(private commonService:CommonService) { 
@@ -26,8 +26,14 @@ export class NewsComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    
     this.commonService.getEvents();
     this.gotEvents=this.commonService.gotEvents;
+    
+    
+  }
+  ngAfterViewInit(){
+    
   }
 
   ngOnDestroy(){

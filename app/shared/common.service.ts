@@ -18,7 +18,6 @@ myEvent$:Observable<MyEvent[]>;
 
 
 
-
 constructor(private db:AngularFirestore){
     this.people={
         id:null,
@@ -95,6 +94,7 @@ this.peopleSubscription=this.people$.subscribe(result=>{
       return actions.map(action => {
         const data = action.payload.doc.data() as MyEvent;
         const id = action.payload.doc.id;
+        
 
         return { id, ...data };
 
@@ -113,6 +113,8 @@ this.eventSubscription=this.myEvent$.subscribe(result=>{
       
 
     }
+    
+  
 
     
 
