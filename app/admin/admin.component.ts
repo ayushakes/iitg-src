@@ -101,6 +101,7 @@ onSubmitEvent(form:NgForm){this.loading=true;
 
 
   ngOnInit() {
+    this.gotPeople=[];
     this.commonService.getPeople();
     this.gotPeople=this.commonService.gotPeople;
     this.commonService.getEvents();

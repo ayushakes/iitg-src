@@ -67,7 +67,7 @@ peoples:Observable<People[]>
       console.log(this.id);
 
 
-      if(this.people.type=='Student'){
+      if(result.type=='Student'){
         this.people={
           type:result.type,
           program:"",
@@ -87,7 +87,7 @@ peoples:Observable<People[]>
           }
       }
       
-      else if(this.people.type=='Faculty'){
+      else if(result.type=='Faculty'){
         this.people={
           type:result.type,
           program:"",
