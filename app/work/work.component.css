@@ -29,3 +29,16 @@
         animation-duration: 1s;
 
     }
+    
+    .sideLink1{
+        animation-delay:0.2s
+    }
+    .sideLink2{
+        animation-delay:0.4s
+    }
+    .sideLink3{
+        animation-delay:0.6s
+    }
+    .sideLink4{
+        animation-delay:0.8s
+    }

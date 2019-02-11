@@ -104,3 +104,16 @@ min-height: 250px;
 .container-fluid,.container{
     animation-duration: 1s;
 }
+
+.link1{
+    animation-delay:0.2s
+}
+.link2{
+    animation-delay:0.4s
+}
+.link3{
+    animation-delay:0.6s
+}
+.link4{
+    animation-delay:0.8s
+}
